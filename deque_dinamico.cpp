@@ -87,15 +87,17 @@ void escreve_dir(deque* d){ //exercício 1
 }
 
 int extremidade_dir(deque* d){ //exercício 3a
-	if(!vazio(d))
-		return d->sentinela->ant->item.chave;
-	return d->sentinela->item.chave; //retorno de lixo
+	return d->sentinela->ant->item.chave;
+	//Caso o deque esteja vazio, a função irá
+	//retornar o valor da sentinela, que é considerado
+	//lixo de memória
 }
 
 int extremidade_esq(deque* d){ //exercício 3b
-	if(!vazio(d))
-		return d->sentinela->prox->item.chave;
-	return d->sentinela->item.chave; //retorno de lixo
+	return d->sentinela->prox->item.chave;
+	//Caso o deque esteja vazio, a função irá
+	//retornar o valor da sentinela, que é considerado
+	//lixo de memória
 }
 
 void clear_screen(){

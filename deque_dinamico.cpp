@@ -76,6 +76,19 @@ int remove_esq(deque* d, item* retorno){
 	return 0;
 }
 
+void escreve_dir(deque* d){ //exercício 1
+	celula *aux;
+
+	if(!vazio(d)){
+		aux = d->sentinela->prox;
+		while(aux != d->sentinela){
+			cout << aux->item.chave << " ";
+			aux = aux->prox;
+		}
+		cout << endl << endl;
+	}
+}
+
 void clear_screen(){
 	system("clear");
 }
@@ -94,6 +107,7 @@ int main(){
 		cout << "[3] Inserir na esquerda" << endl;
 		cout << "[4] Remover na direita" << endl;
 		cout << "[5] Remover na esquerda" << endl;
+		cout << "[6] Escrever direita p/ esquerda" << endl;
 		cin >> opt;
 		switch(opt){
 			case 1:
@@ -129,6 +143,11 @@ int main(){
 				if(remove_esq(&A, &retorno))
 					cout << retorno.chave << " REMOVIDO COM SUCESSO\n" << endl;
 				else cout << "ERRO NA REMOCAO\n" << endl;
+			break;
+
+			case 6:
+				cout << endl;
+				escreve_dir(&A);
 			break;
 		}
 	}while(opt != 0);

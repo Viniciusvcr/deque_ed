@@ -107,7 +107,6 @@ void clear_screen(){
 int main(){
 	deque A;
 	int opt;
-	char c;
 	item insere, retorno;
 
 	inicializa(&A);

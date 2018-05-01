@@ -89,6 +89,18 @@ void escreve_dir(deque* d){ //exercício 1
 	}
 }
 
+int extremidade_dir(deque* d){ //exercício 3a
+	if(!vazio(d))
+		return d->sentinela->ant->item.chave;
+	return d->sentinela->item.chave; //retorno de lixo
+}
+
+int extremidade_esq(deque* d){ //exercício 3b
+	if(!vazio(d))
+		return d->sentinela->prox->item.chave;
+	return d->sentinela->item.chave; //retorno de lixo
+}
+
 void clear_screen(){
 	system("clear");
 }
@@ -108,6 +120,8 @@ int main(){
 		cout << "[4] Remover na direita" << endl;
 		cout << "[5] Remover na esquerda" << endl;
 		cout << "[6] Escrever direita p/ esquerda" << endl;
+		cout << "[7] Extremidade direita" << endl;
+		cout << "[8] Extremidade esquerda" << endl;
 		cin >> opt;
 		switch(opt){
 			case 1:
@@ -148,6 +162,14 @@ int main(){
 			case 6:
 				cout << endl;
 				escreve_dir(&A);
+			break;
+
+			case 7:
+				cout << "Extremidade direita: " << extremidade_dir(&A) << endl << endl;
+			break;
+
+			case 8:
+				cout << "Extremidade esquerda: " << extremidade_esq(&A) << endl << endl;
 			break;
 		}
 	}while(opt != 0);

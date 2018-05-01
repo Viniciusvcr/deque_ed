@@ -77,16 +77,13 @@ int remove_esq(deque* d, item* retorno){
 }
 
 void escreve_dir(deque* d){ //exercício 1
-	celula *aux;
+	celula *aux = d->sentinela->prox;
 
-	if(!vazio(d)){
-		aux = d->sentinela->prox;
-		while(aux != d->sentinela){
-			cout << aux->item.chave << " ";
-			aux = aux->prox;
-		}
-		cout << endl << endl;
+	while(aux != d->sentinela){
+		cout << aux->item.chave << " ";
+		aux = aux->prox;
 	}
+	cout << endl << endl;
 }
 
 int extremidade_dir(deque* d){ //exercício 3a
@@ -160,7 +157,7 @@ int main(){
 			break;
 
 			case 6:
-				cout << endl;
+				cout << "DEQUE COMPLETO:" << endl;
 				escreve_dir(&A);
 			break;
 
